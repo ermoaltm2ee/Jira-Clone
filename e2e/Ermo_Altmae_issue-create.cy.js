@@ -70,7 +70,7 @@ describe('Issue create', () => {
 describe('ADD MORE TESTS FOR COVERING ISSUE CREATION FUNCTIONALITY', () => {
   //Test Case 1: Custom Issue Creation:
   //Modify the test case as follows
-  it('Title: "Bug"', () => {
+  it.only('Title: "Bug"', () => {
     cy.visit('/');
     cy.get('[data-testid="icon:plus"]').click()
   //Description: “My bug description”
