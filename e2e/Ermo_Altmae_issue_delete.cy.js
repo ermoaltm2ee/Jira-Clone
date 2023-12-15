@@ -69,8 +69,10 @@ cy.contains('Issue has been successfully created.').should('be.visible');
 cy.reload();
 cy.contains('Issue has been successfully created.').should('not.exist');
 cy.contains('[data-testid="list-issue"]', 'Metsavennad 2023').click();
-cy.get('[data-testid="icon:trash"]').click()
+cy.get('[data-testid="icon:trash"]').click();
 cy.contains('Cancel').click();
+//close icon
+cy.get('[data-testid="icon:close"]').eq(0).click();
 });
 
   
