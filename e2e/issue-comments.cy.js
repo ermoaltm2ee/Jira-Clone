@@ -73,7 +73,7 @@ describe("Issue comments creating, editing and deleting", () => {
 const getIssueDetailsModal = () =>
   cy.get('[data-testid="modal:issue-details"]');
 import { faker } from "@faker-js/faker";
-it.only("Test Combination: Comments Functionality", () => {
+it("Test Combination: Comments Functionality", () => {
   const randomText = faker.lorem.sentence();
   const comment = randomText;
   cy.visit("/");

@@ -71,7 +71,3 @@ describe("Issue details editing", () => {
   const getIssueDetailsModal = () =>
     cy.get('[data-testid="modal:issue-details"]');
 });
-
-describe("ASSIGNMENT 3: SOLVE JAVASCRIPT TASKS (BONUS)", () => {
-  it("Task 1", () => {});
-});
