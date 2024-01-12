@@ -125,7 +125,7 @@ it("Title: Use the random data plugin for a single word.", () => {
 });
 
 describe("ASSIGNMENT 3: SOLVE JAVASCRIPT TASKS (BONUS)", () => {
-  it.only("Task 3. application is removing unnecessary spaces on the board view", () => {
+  it("Task 3. application is removing unnecessary spaces on the board view", () => {
     cy.visit("/");
     const title = "     Hello     World!";
     const predefinedTitle = "Hello world!";
