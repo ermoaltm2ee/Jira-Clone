@@ -71,3 +71,52 @@ describe("Issue details editing", () => {
   const getIssueDetailsModal = () =>
     cy.get('[data-testid="modal:issue-details"]');
 });
+
+describe("ASSIGNMENT 3: SOLVE JAVASCRIPT TASKS (BONUS)", () => {
+  beforeEach(() => {
+    cy.visit("/");
+    cy.url()
+      .should("eq", `${Cypress.env("baseUrl")}project`)
+      .then((url) => {
+        cy.visit(url + "/board");
+        cy.contains("This is an issue of type: Task.").click();
+      });
+  });
+
+  it("Task 1: Priority", () => {
+    const expectedLength = 5;
+    let priorityValues = [];
+    cy.visit("/");
+    cy.get('[data-testid="icon:plus"]').click();
+
+    cy.get('[data-testid="select:priority"]').click();
+    cy.log(
+      `Added value: ${value}, Current array length: ${priorityValues.length}`
+    );
+  }).then(() => {
+    expect(priorityValues.length).to.equal(expectedLength);
+  });
+});
+
+it("Task 2. Characters in Reporter name", () => {
+  cy.visit("/");
+  cy.contains("Click on an issue to see what's behind it.").click();
+  cy.get('[data-testid="select:reporter"]').click("bottomRight");
+  cy.get('[data-testid="select-option:Baby Yoda"]').click();
+  cy.get('[data-testid="select:reporter"]')
+    .invoke("text")
+    .then((reporterName) => {
+      const regexPattern = /Baby Yoda/;
+      expect(reporterName).to.match(regexPattern);
+    });
+});
+
+it("Task 3. application is removing unnecessary spaces on the board view", () => {
+  cy.visit("/");
+  const title = "metsa_vennad 2024";
+  cy.get('[data-testid="icon:plus"]')
+    .click()
+    .then(() => {
+      cy.get('[data-testid="form-field:title"]').type(title);
+    });
+});
