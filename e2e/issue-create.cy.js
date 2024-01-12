@@ -123,3 +123,23 @@ it("Title: Use the random data plugin for a single word.", () => {
   //Assert that the issue has been created and is visible on the board.
   cy.get('button[type="submit"]').click();
 });
+
+describe("ASSIGNMENT 3: SOLVE JAVASCRIPT TASKS (BONUS)", () => {
+  it("Task 3. application is removing unnecessary spaces on the board view", () => {
+    cy.visit("/");
+    const title = "     Hello     World!";
+    const predefinedTitle = "Hello world!";
+    const trimmedPredefinedTitle = predefinedTitle.trim();
+    const trimmedTitle = title.trim();
+    console.log(trimmedTitle);
+    cy.get('[data-testid="icon:plus"]')
+      .click()
+      .then(() => {
+        cy.get('[data-testid="form-field:title"]').type(title);
+
+        cy.get('button[type="submit"]').click();
+      });
+  });
+});
+
+// Define the issue title as a variable with multiple spaces
